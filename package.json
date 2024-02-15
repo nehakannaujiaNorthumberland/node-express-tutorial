@@ -1,0 +1,25 @@
+{
+  "name": "express-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index",
+    "saas-watch": "sass --no-source-map --watch src/main.scss public/css/main.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "govuk-frontend": "^5.1.0",
+    "nunjucks": "^3.2.4",
+    "saas": "^1.0.0",
+    "sass": "^1.70.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
