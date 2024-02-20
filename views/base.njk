@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>start up page </title>
+    <link rel="stylesheet" type="text/css"  href="css/govuk-frontend.min.css">
+   
+  </script>
+</head>
+<body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+      <script type="module" src="javascript/govuk-frontend.min.js"></script>
+    <script type="module">
+        import { initAll } from '/javascript/govuk-frontend.min.js'
+        initAll()
+    </script>
+    <header>
+         <h1 class="govuk-heading-l">gov uk header on base template using govuk css </h1>
+        {% block header %}
+            <h1> This is header from base njk </h1>
+        {% endblock %}
+    </header>
+    <main>
+        {% block content %}
+        <p>This is Body from base njk</p>
+        {% endblock %}
+    </main>
+    <footer>
+        {% block footer %}
+         <p>This is footer from base njk</p>
+        {% endblock %}
+    <footer>
+       
+    {# {% include "./components/List.njk" with members %} #}
+</body>
+</html>

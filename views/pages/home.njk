@@ -1,0 +1,55 @@
+{% extends "../base.njk" %}
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+
+{% block header %}
+   <h1> This is overridden header from home </h1>
+{% endblock %}
+{% block content %}
+
+{{ govukAccordion({
+  id: "accordion-default",
+  items: [
+    {
+      heading: {
+        text: "Writing well for the web"
+      },
+      content: {
+        html: '<p class="govuk-body">This is the content for Writing well for the web.</p>'
+      }
+    },
+    {
+      heading: {
+        text: "Writing well for specialists"
+      },
+      content: {
+        html: '<p class="govuk-body">This is the content for Writing well for specialists.</p>'
+      }
+    },
+    {
+      heading: {
+        text: "Know your audience"
+      },
+      content: {
+        html: '<p class="govuk-body">This is the content for Know your audience.</p>'
+      }
+    },
+    {
+      heading: {
+        text: "How people read"
+      },
+      content: {
+        html: '<p class="govuk-body">This is the content for How people read.</p>'
+      }
+    }
+  ]
+}) }}
+
+   {% for key, value in data %}
+   {# <h1> This is overridden content from home {{ members[0].name }}</h1> #}
+   <p> Key : {{ key }} , value: {{ value }} </p>
+   {% endfor %}
+{% endblock %}
+{% block footer %}
+<h1>This is overridden footer</h1>
+{% endblock%}

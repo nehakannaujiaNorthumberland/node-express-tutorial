@@ -1,0 +1,51 @@
+{% extends "govuk/template.njk" %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% block head %}
+  <link rel="stylesheet" type="text/css"  href="css/govuk-frontend.min.css">
+  <link rel="stylesheet" type="text/css"  href="css/ncc-frontend.css">
+{% endblock %}
+
+{% block pageTitle %}Northumberland city council - GOV.UK - Homepage{% endblock %}
+{% block skipLink %}
+  {{ govukSkipLink({
+    href: "#main-content",
+    text: "Skip to main content"
+  }) }}
+{% endblock %}
+
+{% block header%}
+
+ {% include "../components/nccHeader.njk" %}
+
+
+{% endblock%}
+
+{% block content %}
+
+<div class="govuk-panel govuk-panel--confirmation">
+    <p>Welcome to </p>
+  <h1 class="govuk-panel__title">
+    Northumberland ciry council {{members[0].name}}
+  </h1>
+  <div class="govuk-panel__body">
+    Your reference number<br><strong>HDJ2123F</strong>
+  </div>
+</div>
+
+{{ govukSummaryList({
+  rows : 
+}) }}
+
+
+
+{% endblock %}
+
+{% block bodyEnd %}
+  {# Run JavaScript at end of the <body>, to avoid blocking the initial render. #}
+  <script type="module" src="javascript/govuk-frontend.min.js"></script>
+  <script type="module">
+    import { initAll } from '/javascript/govuk-frontend.min.js'
+    initAll()
+  </script>
+{% endblock %}
